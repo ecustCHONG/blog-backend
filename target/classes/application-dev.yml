@@ -1,3 +1,7 @@
+#开发环境配置文件：
+#          1.数据库配置
+#          2.jpa设置
+#          3.日志级别，文件位置配置
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver

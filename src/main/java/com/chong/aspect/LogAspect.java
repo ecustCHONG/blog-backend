@@ -13,15 +13,13 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
 
 /**
- * @author
- * @decription
- * @date:2020/7/4 17:41
+ * 日志切面
  */
 @Aspect
 @Component
 public class LogAspect {
     private final Logger logger= LoggerFactory.getLogger(this.getClass());
-    @Pointcut("execution(* com.chong.web.*.*(..))")
+    @Pointcut("execution(* com.chong.web.*.*(..))")//对所有web包下的请求做切面
     public void pointCut(){}
     @Before("pointCut()")
     public void doBefore(JoinPoint joinPoint){
