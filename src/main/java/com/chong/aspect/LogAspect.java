@@ -23,6 +23,7 @@ public class LogAspect {
     public void pointCut(){}
     @Before("pointCut()")
     public void doBefore(JoinPoint joinPoint){
+        System.out.println("------logger before-------");
         Object[] args = joinPoint.getArgs();
         String name =joinPoint.getSignature().getDeclaringTypeName()+"."+joinPoint.getSignature().getName();
         ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
@@ -39,6 +40,7 @@ public class LogAspect {
     }
     @AfterReturning(returning = "result",pointcut = "pointCut()")
     public void doAfterReturn(Object result){
+        System.out.println("----- logger afterReturn-------");
         logger.info("Result:{}"+result);
     }
     private class RequestLog{

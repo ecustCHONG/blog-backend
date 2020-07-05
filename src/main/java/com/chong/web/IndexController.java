@@ -11,15 +11,20 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Controller
 public class IndexController {
-    @GetMapping("/{id}/{name}")
-//    @GetMapping("/")
-    public String index(@PathVariable("id") int id, @PathVariable("name") String name) {
-//        public String index(){
+//    @GetMapping("/{id}/{name}")
+    @GetMapping("/")
+//    public String index(@PathVariable("id") int id, @PathVariable("name") String name) {
+        public String index(){
 //        String blog = null;
 //        if(blog==null)
 //            throw new NotFindException("博客未找到");
-//        int id2=9/0; 异常处理
-        System.out.println(id + name);
+//        int id2=9/0; //异常处理
+//        System.out.println(id + name);
         return "index";
+    }
+
+    @GetMapping("/blog")
+    public String blog(){
+        return "blog";
     }
 }
