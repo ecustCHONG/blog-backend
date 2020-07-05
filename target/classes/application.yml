@@ -1,0 +1,14 @@
+spring:
+  thymeleaf:
+    mode: HTML
+    prefix: classpath:/templates/
+    cache: false
+    servlet:
+      content-type: text/html
+  profiles:
+    active: dev
+  messages:
+    basename: i18n/messages
+
+
+
